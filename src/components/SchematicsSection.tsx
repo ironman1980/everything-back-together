@@ -40,7 +40,57 @@ const SchematicsSection = () => {
           </p>
         </motion.div>
 
-        {/* Video Highlight */}
+        {/* === TIER 1: Hero Overview — ORCA Dual + Kinetic Video side by side === */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+          <HudPanel title="ORCA Status — Dual Perspective" delay={0.1}>
+            <img src={specOrcaDual} alt="ORCA Dual View" className="w-full h-auto rounded-sm border border-primary/10 opacity-90 hover:opacity-100 transition-opacity" />
+          </HudPanel>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="glass-panel hud-corner p-2 md:p-4 relative group flex flex-col"
+          >
+            <div className="flex items-center gap-3 mb-4 px-4 pt-4">
+              <span className="status-indicator status-indicator-red" />
+              <h3 className="font-display text-sm tracking-[0.3em] uppercase text-primary">LIVE UPLINK: KINETIC FEEDBACK</h3>
+              <div className="neon-line flex-1" />
+            </div>
+            <video 
+              src={specVideo} 
+              autoPlay loop muted playsInline 
+              className="w-full h-auto object-cover rounded-sm opacity-90 group-hover:opacity-100 transition-opacity flex-1"
+            />
+          </motion.div>
+        </div>
+
+        {/* === TIER 2: Diagnostic Full-Width === */}
+        <HudPanel title="Diagnostic Mode — Full Spectrum Analysis" className="mb-12" delay={0.1}>
+          <img src={specDiagnostic} alt="Diagnostic" className="w-full h-auto rounded-sm border border-primary/10 opacity-90 hover:opacity-100 transition-opacity" />
+        </HudPanel>
+
+        {/* === TIER 3: Anatomical Detail Grid — 3-column === */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <HudPanel title="Frontal Specification" className="md:col-span-2" delay={0.1}>
+            <img src={specFrontal} alt="Frontal Spec" className="w-full h-auto rounded-sm border border-primary/10 opacity-90 hover:opacity-100 transition-opacity" />
+          </HudPanel>
+          <HudPanel title="Sacral Architecture" delay={0.2}>
+            <img src={specDorsal} alt="Dorsal" className="w-full h-auto rounded-sm border border-primary/10 opacity-90 hover:opacity-100 transition-opacity" />
+          </HudPanel>
+        </div>
+
+        {/* === TIER 4: Pelvic + Hydraulic — Detail Pair === */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <HudPanel title="Hydraulic Actuators — Dorsal" delay={0.1}>
+            <img src={specHydraulic} alt="Hydraulic System" className="w-full h-auto rounded-sm border border-primary/10 opacity-90 hover:opacity-100 transition-opacity" />
+          </HudPanel>
+          <HudPanel title="Pelvic Girdle Interface" className="md:col-span-2" delay={0.2}>
+            <img src={specPelvicDetail} alt="Pelvic Detail" className="w-full h-auto rounded-sm border border-primary/10 opacity-90 hover:opacity-100 transition-opacity" />
+          </HudPanel>
+        </div>
+
+        {/* === TIER 5: 360° Spin Video — Full Width === */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -48,73 +98,22 @@ const SchematicsSection = () => {
           className="mb-12 glass-panel hud-corner p-2 md:p-4 relative group"
         >
           <div className="absolute top-6 left-6 z-10 flex items-center gap-2 bg-background/80 px-3 py-1.5 rounded border border-primary/30 backdrop-blur-sm">
-            <span className="status-indicator status-indicator-red" />
-            <span className="font-mono text-[10px] text-primary">LIVE UPLINK: KINETIC FEEDBACK</span>
-          </div>
-          <video 
-            src={specVideo} 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            className="w-full h-auto object-cover rounded-sm opacity-90 group-hover:opacity-100 transition-opacity"
-          />
-        </motion.div>
-
-        {/* ORCA Dual View — Full Width */}
-        <HudPanel title="ORCA Status — Dual Perspective" className="mb-6">
-          <img src={specOrcaDual} alt="ORCA Dual View" className="w-full h-auto rounded-sm border border-primary/10 opacity-90 hover:opacity-100 transition-opacity" />
-        </HudPanel>
-
-        {/* Spin Video */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-6 glass-panel hud-corner p-2 md:p-4 relative group"
-        >
-          <div className="absolute top-6 left-6 z-10 flex items-center gap-2 bg-background/80 px-3 py-1.5 rounded border border-primary/30 backdrop-blur-sm">
             <span className="status-indicator" />
             <span className="font-mono text-[10px] text-primary">360° KÖRPERSIMULATION</span>
           </div>
           <video 
             src={specSpinVideo} 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
+            autoPlay loop muted playsInline 
             className="w-full h-auto object-cover rounded-sm opacity-90 group-hover:opacity-100 transition-opacity"
           />
         </motion.div>
 
-        {/* Grid for Schematics */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <HudPanel title="Diagnostic Mode" className="lg:col-span-2">
-            <img src={specDiagnostic} alt="Diagnostic" className="w-full h-auto rounded-sm border border-primary/10 opacity-90 hover:opacity-100 transition-opacity" />
-          </HudPanel>
-          
-          <HudPanel title="Hydraulic Actuators — Dorsal">
-            <img src={specHydraulic} alt="Hydraulic System" className="w-full h-auto rounded-sm border border-primary/10 opacity-90 hover:opacity-100 transition-opacity" />
-          </HudPanel>
-
-          <HudPanel title="Pelvic Girdle Interface" className="lg:col-span-2">
-            <img src={specPelvicDetail} alt="Pelvic Detail" className="w-full h-auto rounded-sm border border-primary/10 opacity-90 hover:opacity-100 transition-opacity" />
-          </HudPanel>
-
-          <HudPanel title="Sacral Architecture">
-            <img src={specDorsal} alt="Dorsal" className="w-full h-auto rounded-sm border border-primary/10 opacity-90 hover:opacity-100 transition-opacity" />
-          </HudPanel>
-
-
-          <HudPanel title="System Status: Valid" className="lg:col-span-2">
+        {/* === TIER 6: Validation — Status + Blueprint === */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <HudPanel title="System Status: Valid" className="md:col-span-2" delay={0.1}>
             <img src={specSyntid} alt="Syntid" className="w-full h-auto rounded-sm border border-primary/10 opacity-90 hover:opacity-100 transition-opacity" />
           </HudPanel>
-
-          <HudPanel title="Frontal Specification" className="lg:col-span-2">
-             <img src={specFrontal} alt="Frontal Spec" className="w-full h-auto rounded-sm border border-primary/10 opacity-90 hover:opacity-100 transition-opacity" />
-          </HudPanel>
-
-          <HudPanel title="Rear Design View" className="lg:col-span-1">
+          <HudPanel title="Rear Blueprint" delay={0.2}>
             <img src={specFullBlue} alt="Full Blue" className="w-full h-auto rounded-sm border border-primary/10 opacity-90 hover:opacity-100 transition-opacity" />
           </HudPanel>
         </div>
