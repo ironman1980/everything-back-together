@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-matrix.jpg";
+import cotasyreImage from "@/assets/cotasyre-header.png";
 
 const HeroSection = () => {
   return (
@@ -94,12 +95,32 @@ const HeroSection = () => {
           </span>
         </motion.div>
 
+        {/* Cotasyre Header Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 1.5 }}
+          className="mt-16 relative mx-auto max-w-5xl"
+        >
+          <div className="hud-corner glass-panel p-2 md:p-3">
+            <img
+              src={cotasyreImage}
+              alt="Project RAMA — Unit 01 Berserker — SRAM Logic Active"
+              className="w-full h-auto rounded-sm opacity-90"
+            />
+            <div className="absolute top-4 left-4 md:top-6 md:left-6 flex items-center gap-2">
+              <span className="status-indicator" />
+              <span className="font-mono text-[10px] text-primary tracking-wider">UNIT 01 — SRAM LOGIC ACTIVE</span>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          transition={{ delay: 2.5, duration: 1 }}
+          className="mt-12"
         >
           <motion.div
             animate={{ y: [0, 8, 0] }}
