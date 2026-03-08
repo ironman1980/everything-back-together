@@ -20,7 +20,7 @@ const MarketSection = () => {
           <div className="flex items-center gap-4 mb-4">
             <div className="neon-line-red w-12" />
             <span className="font-mono text-xs text-secondary tracking-[0.3em] uppercase">
-              KAPITEL 05
+              KAPITEL 06
             </span>
           </div>
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-wide text-foreground mb-4">
