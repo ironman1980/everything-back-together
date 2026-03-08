@@ -105,9 +105,6 @@ const SchematicsSection = () => {
             <img src={specDorsal} alt="Dorsal" className="w-full h-auto rounded-sm border border-primary/10 opacity-90 hover:opacity-100 transition-opacity" />
           </HudPanel>
 
-          <HudPanel title="Sub-Pelvic Module">
-            <img src={specPelvic} alt="Pelvic" className="w-full h-auto rounded-sm border border-primary/10 opacity-90 hover:opacity-100 transition-opacity" />
-          </HudPanel>
 
           <HudPanel title="System Status: Valid" className="lg:col-span-2">
             <img src={specSyntid} alt="Syntid" className="w-full h-auto rounded-sm border border-primary/10 opacity-90 hover:opacity-100 transition-opacity" />
