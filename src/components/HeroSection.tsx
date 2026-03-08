@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-matrix.jpg";
+import cotasyreImage from "@/assets/cotasyre-header.png";
 
 const HeroSection = () => {
   return (
