@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AlertCircle, Power, RefreshCw, Maximize2 } from 'lucide-react';
+import { CircleAlert as AlertCircle, Power, RefreshCw, Maximize2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
